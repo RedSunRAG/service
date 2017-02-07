@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../base.css" type="text/css">
+
+
+    <script>
+        function start() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("start", "/", true);
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    alert(xhr.responseText)
+                }
+            }
+
+
+        }
+        function restart() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("restart", "/", true);
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    alert(xhr.responseText)
+                }
+            }
+        }
+        function stop() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("stop", "/", true);
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                    alert(xhr.responseText)
+                }
+            }
+        }
+        function checkboxed() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("checkboxed", "/", true);
+            xhr.send()
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>статус сервиса {{ name }}</h1>
+
+</body>
+
+<p><input class="button orange" type="button" onclick="start()" value="Запустить"></p>
+<p><input class="button orange" type="button" onclick="restart()" value="Перезапустить"></p>
+<p><input class="button orange" type="button" onclick="stop()" value="Остановить"></p>
+<p><input type="checkbox" onclick="checkboxed()" {{ ch }}></p>
+</html>
