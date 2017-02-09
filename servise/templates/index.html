@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <link rel="stylesheet" href="../base.css" type="text/css">
 
 
@@ -13,8 +14,7 @@
             xhr.send()
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
-                    alert(xhr.responseText)
-                }
+                    location.reload()                }
             }
 
 
@@ -25,7 +25,7 @@
             xhr.send()
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
-                    alert(xhr.responseText)
+                    location.reload()
                 }
             }
         }
@@ -35,7 +35,7 @@
             xhr.send()
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
-                    alert(xhr.responseText)
+                    location.reload()
                 }
             }
         }
@@ -45,18 +45,19 @@
             xhr.send()
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4) {
+                    location.reload()
                 }
             }
         }
     </script>
 </head>
 <body>
-<h1>статус сервиса {{ name }}</h1>
 
+<a><h3> Сервис {{ name }}</h3></a>
 </body>
 
-<p><input class="button orange" type="button" onclick="start()" value="Запустить"></p>
-<p><input class="button orange" type="button" onclick="restart()" value="Перезапустить"></p>
-<p><input class="button orange" type="button" onclick="stop()" value="Остановить"></p>
-<p><input type="checkbox" onclick="checkboxed()" {{ ch }}></p>
+<input class="button orange" type="button" onclick="start()" value="Запустить" {{ dis }}><br>
+<input class="button orange" type="button" onclick="restart()" value="Перезапустить" {{ dis }}><br>
+<input class="button orange" type="button" onclick="stop()" value="Остановить" {{ dis }}><br>
+<input type="checkbox" onclick="checkboxed()" {{ ch }}>
 </html>
